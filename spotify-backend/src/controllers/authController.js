@@ -31,7 +31,7 @@ exports.login = async (req, res) => {
       { expiresIn: '1d' }
     );
 
-    // ✅ role response-a əlavə edildi
+   
     res.status(200).json({
       token,
       user: {
@@ -46,7 +46,7 @@ exports.login = async (req, res) => {
   }
 };
 
-// ── LIKED SONGS ──
+
 exports.getLikedSongs = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).populate('likedSongs');
@@ -76,7 +76,7 @@ exports.toggleLikeSong = async (req, res) => {
   }
 };
 
-// ── PLAYLISTS ──
+
 exports.getPlaylists = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).populate('playlists.songs');

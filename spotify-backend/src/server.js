@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors'); 
 const songRoutes = require('./routes/songRoutes');
 const userRoutes = require('./routes/userRoutes'); 
-const artistRoutes = require('./routes/artistRoutes'); // 1. Bura əlavə et
+const artistRoutes = require('./routes/artistRoutes'); 
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 app.use('/api/songs', songRoutes);
 app.use('/api/auth', userRoutes); 
-app.use('/api/artists', artistRoutes); // 2. Bura əlavə et
+app.use('/api/artists', artistRoutes); 
 
 const PORT = process.env.PORT || 5001;
 const MONGO_URI = process.env.MONGO_URI;

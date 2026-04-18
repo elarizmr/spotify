@@ -6,11 +6,11 @@ const auth = require('../middleware/auth');
 router.post('/register', authController.register);
 router.post('/login', authController.login);
 
-// Liked Songs
+
 router.get('/liked', auth, authController.getLikedSongs);
 router.post('/liked/:songId', auth, authController.toggleLikeSong);
 
-// Playlists
+
 router.get('/playlists', auth, authController.getPlaylists);
 router.post('/playlists', auth, authController.createPlaylist);
 router.post('/playlists/:playlistId/songs/:songId', auth, authController.addSongToPlaylist);
